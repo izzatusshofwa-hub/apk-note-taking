@@ -1,0 +1,44 @@
+from collections import deque
+
+# =========================
+# DATA NOTE
+# =========================
+notes = [
+    {"judul": "Belajar Python", "tags": ["Kuliah", "Programming"]},
+    {"judul": "Belanja", "tags": ["Pribadi"]},
+    {"judul": "Tugas Queue", "tags": ["Kuliah", "Tugas"]}
+]
+
+# =========================
+# CHRONOLOGICAL VIEW
+# =========================
+print("=== CHRONOLOGICAL VIEW ===")
+for note in notes:
+    print(note)
+
+# =========================
+# ALPHABETICAL VIEW
+# =========================
+print("\n=== ALPHABETICAL VIEW ===")
+
+urut = sorted(notes, key=lambda x: x["judul"])
+
+for note in urut:
+    print(note)
+
+# =========================
+# RECENT CHANGES
+# =========================
+print("\n=== RECENT CHANGES ===")
+
+recent = deque(maxlen=5)
+
+recent.append("Tambah note")
+recent.append("Tambah tag")
+recent.append("Edit note")
+recent.append("Hapus note")
+recent.append("Tambah tugas")
+recent.append("Edit tugas")
+
+for r in recent:
+    print(r)
